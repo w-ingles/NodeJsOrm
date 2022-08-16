@@ -1,4 +1,9 @@
-node_modules
 ./node_modules
 .gitignore
 .idea
+.vscode
+api/config/config.json
+node_modules
+
+
+
