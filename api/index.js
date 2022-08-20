@@ -1,17 +1,10 @@
 const express = require('express')
-const bodyParse = require('body-parser')
+const routes = require('./routes/index.js')
 
 const app = express()
-
-app.use(bodyParse.json())
-
 const port = 3000
 
-app.get('/teste', (req,res) =>
-
-    res.status(200).send({msg: 'API 100%'})
-)
-
+routes(app)
 
 app.listen(port,() =>
 
