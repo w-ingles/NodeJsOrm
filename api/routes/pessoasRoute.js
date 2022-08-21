@@ -7,5 +7,6 @@ const router = Router()
 
 router.get('/Pessoas',PessoaController.buscaTodasPessoas)
 router.get('/Pessoas/:id',PessoaController.buscaPessoa)
+router.post('/Pessoas',PessoaController.criaPessoa)
 
 module.exports = router
