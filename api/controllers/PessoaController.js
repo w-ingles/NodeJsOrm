@@ -17,9 +17,6 @@ class PessoaController{
     static async buscaPessoa(req, res){
         const {id} = req.params
 
-        console.log( req.params)
-
-
         try {
             const Pessoa = await database.Pessoas.findOne({
                 where: {
@@ -32,6 +29,19 @@ class PessoaController{
         }catch (e){
             return res.status(500).send(e.message)
         }
+    }
+
+    static async criaPessoa(req,res) {
+        const novaPessoa = req.body
+
+        try {
+            const PessoaCriada = await database.Pessoas.create(novaPessoa)
+            return res.status(200).json(PessoaCriada)
+
+        }catch (e){
+            return res.status(500).send(e.message)
+        }
+
     }
 }
 
