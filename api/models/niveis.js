@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Niveis.hasMany(models.Turmas)
+      Niveis.hasMany(models.Turmas, {foreignKey: 'nivel_id'} )
     }
   }
   Niveis.init({

@@ -10,6 +10,6 @@ router
 .get      ('/Pessoas/:id',    PessoaController.buscaPessoa)
 .post     ('/Pessoas',        PessoaController.criaPessoa)
 .put      ('/Pessoas/:id',    PessoaController.atualizaPessoa)
-.delete      ('/Pessoas/:id',    PessoaController.deletePessoa)
+.delete   ('/Pessoas/:id',    PessoaController.deletePessoa)
 
 module.exports = router
