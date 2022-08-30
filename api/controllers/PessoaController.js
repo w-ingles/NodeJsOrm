@@ -72,6 +72,26 @@ class PessoaController{
         }
 
     }
+
+    static async buscaUmaMatricula(req, res){
+
+        const {estudanteId,matriculaId} = req.params
+
+        try {
+            const umaMatricula = await database.Matriculas.findOne({
+                where: {
+                    id: Number(matriculaId),
+                    estudante_id: Number(estudanteId)
+
+                }
+            })
+
+            return res.status(200).json(umaMatricula)
+
+        }catch (e){
+            return res.status(500).send(e.message)
+        }
+    }
 }
 
 module.exports = PessoaController

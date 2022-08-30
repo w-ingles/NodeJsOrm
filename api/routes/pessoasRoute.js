@@ -6,10 +6,11 @@ const router = Router()
 
 
 router
-.get      ('/Pessoas',        PessoaController.buscaTodasPessoas)
-.get      ('/Pessoas/:id',    PessoaController.buscaPessoa)
-.post     ('/Pessoas',        PessoaController.criaPessoa)
-.put      ('/Pessoas/:id',    PessoaController.atualizaPessoa)
-.delete   ('/Pessoas/:id',    PessoaController.deletePessoa)
+.get      ('/pessoas',        PessoaController.buscaTodasPessoas)
+.get      ('/pessoas/:id',    PessoaController.buscaPessoa)
+.post     ('/pessoas',        PessoaController.criaPessoa)
+.put      ('/pessoas/:id',    PessoaController.atualizaPessoa)
+.delete   ('/pessoas/:id',    PessoaController.deletePessoa)
+.get      ('/pessoas/:estudanteId/matriculas/:matriculaId', PessoaController.buscaUmaMatricula)
 
 module.exports = router
