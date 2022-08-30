@@ -13,3 +13,5 @@ class TurmasController{
     }
 
 }
+
+module.exports = TurmasController
