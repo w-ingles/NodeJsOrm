@@ -92,6 +92,20 @@ class PessoaController{
             return res.status(500).send(e.message)
         }
     }
+
+    static async criaMatricula(req,res) {
+        const novaPessoa = req.body
+
+        try {
+            const PessoaCriada = await database.Pessoas.create(novaPessoa)
+            return res.status(200).json(PessoaCriada)
+
+        }catch (e){
+            return res.status(500).send(e.message)
+        }
+
+    }
+
 }
 
 module.exports = PessoaController
