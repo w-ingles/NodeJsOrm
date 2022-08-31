@@ -110,12 +110,14 @@ class PessoaController{
 
     static async atualizaMatricula(req,res) {
 
+        console.log("entrouaqui");
+
         const {estudanteId,matriculaId} = req.params
 
         const novaInformacao = req.body
 
         try {
-            await database.Pessoas.update(novaInformacao,{
+            await database.Matriculas.update(novaInformacao,{
 
                 where: {
                     id: Number(matriculaId),
@@ -131,6 +133,23 @@ class PessoaController{
         }catch (e) {
             return res.status(500).send(e.message)
         }
+
+    }
+
+    static async deleteMatricula(req,res){
+
+
+        const {estudanteId,matriculaId} = req.params
+
+        try {
+            await database.Matriculas.destroy({where:{id: Number(matriculaId)}})
+
+            return res.status(200).json({removido: true})
+
+        }catch (e) {
+            return res.status(500).send(e.message)
+        }
+
     }
 
 }

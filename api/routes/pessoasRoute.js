@@ -11,8 +11,9 @@ router
 .post     ('/pessoas',        PessoaController.criaPessoa)
 .put      ('/pessoas/:id',    PessoaController.atualizaPessoa)
 .delete   ('/pessoas/:id',    PessoaController.deletePessoa)
-.get      ('/pessoas/:estudanteId/matriculas/:matriculaId',     PessoaController.buscaUmaMatricula)
-.post     ('/pessoas/:estudanteId/matricula',                   PessoaController.criaMatricula)
-.put      ('/pessoas/:estudanteId/matriculas/:matriculaId',     PessoaController.atualizaMatricula)
+.get      ('/pessoas/:estudanteId/matricula/:matriculaId',          PessoaController.buscaUmaMatricula)
+.post     ('/pessoas/:estudanteId/matricula',                       PessoaController.criaMatricula)
+.put      ('/pessoas/:estudanteId/matricula/:matriculaId',          PessoaController.atualizaMatricula)
+.delete      ('/pessoas/:estudanteId/matricula/:matriculaId',       PessoaController.deleteMatricula)
 
 module.exports = router
